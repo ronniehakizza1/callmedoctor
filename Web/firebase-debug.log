@@ -1,0 +1,58 @@
+[debug] [2024-07-08T10:24:31.168Z] ----------------------------------------------------------------------
+[debug] [2024-07-08T10:24:31.175Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dr Godfrey Gulom\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-07-08T10:24:31.177Z] CLI Version:   13.13.0
+[debug] [2024-07-08T10:24:31.178Z] Platform:      win32
+[debug] [2024-07-08T10:24:31.178Z] Node Version:  v18.20.3
+[debug] [2024-07-08T10:24:31.181Z] Time:          Mon Jul 08 2024 13:24:31 GMT+0300 (East Africa Time)
+[debug] [2024-07-08T10:24:31.182Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-08T10:24:31.205Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-08T10:24:31.206Z] > authorizing via signed-in user (ronniehakizza@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Dr Godfrey Gulom\Desktop\medicalApp-main\Web
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-07-08T10:24:41.022Z] > refreshing access token with scopes: []
+[debug] [2024-07-08T10:24:41.027Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-07-08T10:24:41.027Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-08T10:24:41.587Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-07-08T10:24:41.588Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-07-08T10:24:41.603Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-07-08T10:24:42.309Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-07-08T10:24:42.310Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project callmedoctor-32d76 (CallmeDoctor) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-07-08T10:24:48.547Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-07-08T10:24:48.547Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/callmedoctor-32d76
+[debug] [2024-07-08T10:24:50.496Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com 200
+[debug] [2024-07-08T10:24:50.496Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com [omitted]
+[warn] !  database: missing required API firebasedatabase.googleapis.com. Enabling now... 
+[debug] [2024-07-08T10:24:50.498Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com:enable [none]
+[debug] [2024-07-08T10:24:50.499Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com:enable x-goog-quota-user=projects/callmedoctor-32d76
+[debug] [2024-07-08T10:24:52.780Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com:enable 200
+[debug] [2024-07-08T10:24:52.780Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com:enable [omitted]
+[debug] [2024-07-08T10:25:02.796Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-07-08T10:25:02.797Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/callmedoctor-32d76
+[debug] [2024-07-08T10:25:04.669Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com 200
+[debug] [2024-07-08T10:25:04.669Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/callmedoctor-32d76/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-07-08T10:25:04.690Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/callmedoctor-32d76 [none]
+[debug] [2024-07-08T10:25:05.243Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/callmedoctor-32d76 200
+[debug] [2024-07-08T10:25:05.244Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/callmedoctor-32d76 {"projectId":"callmedoctor-32d76","projectNumber":"967591022734","displayName":"CallmeDoctor","name":"projects/callmedoctor-32d76","resources":{"hostingSite":"callmedoctor-32d76"},"state":"ACTIVE","etag":"1_54036169-ae7f-41d5-8bed-de55a505892a"}

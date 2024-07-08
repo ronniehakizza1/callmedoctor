@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical App v1</title>
+    <link rel="stylesheet" href="css/icon-font-linea.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="left-nav">
+      <div class="nav-btn">
+        <a href="#">
+          <i class="icon icon-basic-home"></i>
+        </a>
+      </div>
+      <div class="nav-btn">
+        <a href="#">
+          <i class="icon icon-basic-heart"></i>
+        </a>
+      </div>
+      <div class="nav-btn">
+        <a href="#">
+          <i class="icon icon-basic-postcard"></i>
+        </a>
+      </div>
+      <div class="nav-btn">
+        <a href="#">
+          <i class="icon icon-basic-message"></i>
+        </a>
+      </div>
+      <div class="nav-btn">
+        <a href="#" id="logout-btn">
+          <i class="icon icon-basic-eye-closed"></i>
+        </a>
+      </div>
+    </nav>
+    <main class="main-content">
+      <div class="header">
+        <a href="#" class="header-btn">Diagnosis</a>
+        <a href="#" class="header-btn">My Lungs</a>
+      </div>
+      <div class="content">
+        <h2>Overview <br />Conditions</h2>
+        <figure class="image-box">
+          <img src="img/lungs.jpg" alt="Lungs" />
+        </figure>
+      </div>
+    </main>
+    <div class="side-content">
+      <div class="col-left">
+        <div class="header">
+          <div class="search">
+            <input
+              type="text"
+              name="Search"
+              id="search"
+              placeholder="Search..."
+            />
+            <div class="icon-box">
+              <i class="icon icon-basic-magnifier"></i>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h3 class="heading-tertiary" id="username">My Lung Condition</h3>
+          <div class="condition">
+            <div class="container status">
+              <div class="text-component">
+                <div class="content-icon">
+                  <i class="icon icon-basic-info"></i>
+                </div>
+                <div class="text">
+                  <span>Lung Status</span>
+                  Good
+                </div>
+              </div>
+            </div>
+            <div class="container heart-rate">
+              <div class="text-component">
+                <div class="content-icon active">
+                  <i class="icon icon-basic-heart"></i>
+                </div>
+                <div class="text">
+                  <span>Heart Rate</span>
+                  <p id="heart-rate">...</p>
+                </div>
+              </div>
+            </div>
+            <div class="container blood-count">
+              <div class="text-component">
+                <div class="content-icon">
+                  <i class="icon icon-basic-helm"></i>
+                </div>
+                <div class="text">
+                  <span>Blood count</span>
+                  <p id="blood-count">...</p>
+                </div>
+              </div>
+            </div>
+            <div class="container glucose">
+              <div class="text-component">
+                <div class="content-icon">
+                  <i class="icon icon-basic-lightbulb"></i>
+                </div>
+                <div class="text">
+                  <span>Glucose Level</span>
+                  <p id="glucose">...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-right">
+        <div class="header">
+          <div class="nav-btn">
+            <i class="icon icon-basic-mail"></i>
+          </div>
+          <div class="nav-btn">
+            <i class="icon icon-basic-alarm"></i>
+          </div>
+          <div class="user-profile">
+            <img src="img/user-1.jpg" alt="User photo" />
+          </div>
+        </div>
+        <div class="content">
+          <h3 class="heading-tertiary">My Schedule</h3>
+          <div class="checkup-container container">
+            <div class="text-component">
+              <div class="content-icon">
+                <i class="icon icon-basic-calendar"></i>
+              </div>
+              <div class="text">
+                <span>Next Checkup</span>
+                Fri, 24 Mar
+              </div>
+            </div>
+            <div class="container bg-gray">
+              <div class="person-container">
+                <div class="image">
+                  <img src="img/doctor-1.avif" alt="Doctor 1" />
+                </div>
+                <div class="text">Dr. Anita</div>
+              </div>
+              <div class="person-container">
+                <div class="image">
+                  <img src="img/doctor-2.jpg" alt="Doctor 2" />
+                </div>
+                <div class="text">Dr. Joanita</div>
+              </div>
+              <div class="person-container">
+                <div class="image">
+                  <img src="img/doctor-3.avif" alt="Doctor 3" />
+                </div>
+                <div class="text">Dr. John</div>
+              </div>
+              <div class="person-container">
+                <div class="image">
+                  <img src="img/doctor-4.avif" alt="Doctor 4" />
+                </div>
+                <div class="text">Dr. Tim</div>
+              </div>
+            </div>
+            <button class="btn primary w-full mt-md">
+              Consult Now <span>&rarr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+      import {
+        getAuth,
+        signOut,
+        onAuthStateChanged,
+        signInWithEmailAndPassword,
+        signInWithRedirect,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        collection,
+        query,
+        where,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCqyUD1yMSKahCSLI1Ki-p1Nw7qpAEnzsw",
+        authDomain: "medicaltestapp-90651.firebaseapp.com",
+        projectId: "medicaltestapp-90651",
+        storageBucket: "medicaltestapp-90651.appspot.com",
+        messagingSenderId: "321066244508",
+        appId: "1:321066244508:web:ca6106e71d00d53578d059",
+        measurementId: "G-EE4KDDG2L2",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      const db = getFirestore(app);
+      const auth = getAuth();
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          console.log(user);
+          const userId = user.uid;
+          //My code here
+
+          const userRef = doc(db, "users", userId);
+          getDoc(userRef).then((docSnap) => {
+            if (docSnap.exists()) {
+              console.log("User data:", docSnap.data());
+
+              const userData = docSnap.data();
+              // Show details on UI
+              const userEl = document.querySelector("#username");
+              const firstName = userData.displayName.split(" ")[0];
+              userEl.innerText = `${firstName} Health Condition`;
+
+              let healthStats = {
+                bloodCount: "Not measured",
+                bloodStatus: "Not measured",
+                glucoseLevel: "Not measured",
+                heartRate: "Not measured",
+              };
+
+              healthStats = userData.healthStats || healthStats;
+
+              const heartRateEl = document.querySelector("#heart-rate");
+              heartRateEl.textContent = healthStats.heartRate;
+              const bloodCountEl = document.querySelector("#blood-count");
+              bloodCountEl.textContent = healthStats.bloodCount;
+              const glucoseEl = document.querySelector("#glucose");
+              glucoseEl.textContent = healthStats.glucoseLevel;
+            } else {
+              // No user found
+              console.log("No such user");
+            }
+          });
+        } else {
+          // No user exists
+          window.location.href = "/signin.html";
+        }
+      });
+
+      const logoutBtn = document.getElementById("logout-btn");
+      logoutBtn.addEventListener("click", () => {
+        signOut(auth)
+          .then(() => {
+            //Signed out
+            window.location.href = "/signin.html";
+          })
+          .catch((e) => {
+            // Error occured
+            console.log("Error signing out");
+          });
+      });
+    </script>
+  </body>
+</html>
